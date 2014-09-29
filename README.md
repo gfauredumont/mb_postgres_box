@@ -1,5 +1,7 @@
 
-Load DB dump from 'full_export' file
+# Steps to setup a vagrant box with MusicBrainz data in postgresql server
+
+- Load DB dump from 'full_export' file
 http://musicbrainz.org/doc/MusicBrainz_Database/Download
 =>  http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/
 (copy into project dir)
@@ -43,9 +45,9 @@ cd mb
 tar -xvf mbdumb.tar.bz2
 
 
-
+```
 psql --username=postgres --password --host=localhost -d musicbrainz -f mb_load.sql
-
+```
 
 
 MODIFY postgresql to allow remote connection
@@ -54,12 +56,15 @@ https://coderwall.com/p/cr2a1a
 
 
 sudo vi /etc/postgresql/9.1/main/pg_hba.conf
+```
 # /etc/postgresql/9.1/main/pg_hba.conf    ADD
 host all all  0.0.0.0/0 md5
+```
 
 sudo vi /etc/postgresql/9.1/main/postgresql.conf
+```
 # /etc/postgresql/9.1/main/postgresql.conf
 listen_addresses = '*'
-
+```
 
 sudo service postgresql restart
