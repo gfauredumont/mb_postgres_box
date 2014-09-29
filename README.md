@@ -14,14 +14,18 @@ http://musicbrainz.org/doc/MusicBrainz_Database/Download
 
 
 - Create musicbrainz db in postgres by using 'CreateTables.sql'
-https://github.com/metabrainz/musicbrainz-server/tree/master/admin/sql
-(copy into project dir)
+Schema used to setup this bow come from MusicBrainz GitHub repo,
+file (included in this repo as 'mb/schema.sql') was last updated on 2014 Jul 31st
+[MusicBrainz GH CreateTables.sql file path](https://github.com/metabrainz/musicbrainz-server/blob/master/admin/sql/CreateTables.sql)
+
 
 
 ```shell
 $ mv \vagrant\CreateTables.sql \vagrant\mb_schema
+
 # It's probably a good idea to upgrade your bow before seting everything up:
 $ sudo apt-get upgrade
+
 $ sudo apt-get install postgresql-contrib
 $ sudo /etc/init.d/postgresql restart
 ```
