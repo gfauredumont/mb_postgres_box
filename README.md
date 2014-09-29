@@ -18,12 +18,13 @@ https://github.com/metabrainz/musicbrainz-server/tree/master/admin/sql
 (copy into project dir)
 
 
-
-- mv \vagrant\CreateTables.sql \vagrant\mb_schema
-
-- (sudo apt-get upgrade)
-- sudo apt-get install postgresql-contrib
-- sudo /etc/init.d/postgresql restart
+```shell
+$ mv \vagrant\CreateTables.sql \vagrant\mb_schema
+# It's probably a good idea to upgrade your bow before seting everything up:
+$ sudo apt-get upgrade
+$ sudo apt-get install postgresql-contrib
+$ sudo /etc/init.d/postgresql restart
+```
 
 sudo su - deploy
 cd /vagrant
