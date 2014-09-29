@@ -1,14 +1,16 @@
 
 # Steps to setup a vagrant box with MusicBrainz data in postgresql server
 
+- Clone this project
+- Create Ubuntu box with postgres by applying steps from 
+[my fork of LaKIM's ruby box](https://github.com/gfauredumont/ruby-chef-box)
+
 - Load DB dump from 'full_export' file
 http://musicbrainz.org/doc/MusicBrainz_Database/Download
 =>  http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/
 (copy into project dir)
 
 
-- Create Ubuntu VM with PostgreSQL 9.x
-https://github.com/gfauredumont/ruby-chef-box
 
 
 - Create musicbrainz db in postgres by using 'CreateTables.sql'
