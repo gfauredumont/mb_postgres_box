@@ -22,8 +22,6 @@ file (included in this repo as 'mb/schema.sql') was last updated on 2014 Jul 31s
 
 
 ```shell
-$ mv \vagrant\CreateTables.sql \vagrant\mb_schema
-
 # It's probably a good idea to upgrade your bow before seting everything up:
 $ sudo apt-get upgrade
 
