@@ -62,7 +62,7 @@ CREATE EXTENSION cube;
 
 So now we can run the Schema creation script in order to receive the data:
 ```shell
-$ psql --username=postgres --password --host=localhost -d musicbrainz -f schema
+$ psql --username=postgres --password --host=localhost -d musicbrainz -f CreateTables.sql
 ```
 
 At this point, we have created the MusicBrainz database and all its tables
@@ -79,6 +79,7 @@ $ tar -xvf mbdumb.tar.bz2
 
 
 - Load the MusicBrainz dump from files into postgres
+(WARNING: this script loads all data files from '/vagrant/mb/mbdump'; if you've moved the file, please modify this script accordingly)
 ```shell
 $ psql --username=postgres --password --host=localhost -d musicbrainz -f mb_load.sql
 ```
