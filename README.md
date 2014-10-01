@@ -31,11 +31,14 @@ $ sudo apt-get install postgresql-contrib
 $ sudo /etc/init.d/postgresql restart
 ```
 
+The next steps are regarding postgres' setup so let's go to the mb directory:
+```shell
 cd /vagrant/mb
+```
 
-(password for postgres user is 'postgres')
 
 We'll now start connecting again and again in postgres, but for more and more precise tasks:
+(password for postgres user is 'postgres')
 ```shell
 $ psql --username=postgres --password --host=localhost
 ```
