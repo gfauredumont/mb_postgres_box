@@ -35,26 +35,31 @@ cd /vagrant/mb
 
 (password for postgres user is 'postgres')
 
+We'll now start connecting again and again in postgres, but for more and more precise tasks:
 ```shell
 $ psql --username=postgres --password --host=localhost
 ```
 
+For now, just create the MB database:
 ```plsql
 CREATE DATABASE musicbrainz ENCODING 'UTF8';
 \q
 ```
 
+Now we need to connect to this specific database....
 ```shell
 $ psql --username=postgres --password --host=localhost -d musicbrainz
 ```
 
+... in order to install the 'cube' extension in it:
 ```plsql
 CREATE EXTENSION cube;
 \q
 ```
 
+So now we can run the Schema creation script in order to receive the data:
 ```shell
-$ psql --username=postgres --password --host=localhost -d musicbrainz -f mb_schema
+$ psql --username=postgres --password --host=localhost -d musicbrainz -f schema
 ```
 
 At this point, we have created the MusicBrainz database and all its tables
