@@ -41,9 +41,15 @@ We'll now start connecting again and again in postgres, but for more and more pr
 $ psql --username=postgres --password --host=localhost
 ```
 
+First, create a user for the (future) MusicBrainz DB:
+```plsql
+CREATE ROLE mbuser WITH LOGIN PASSWORD 'musicbrainz';
+\q
+```
+
 For now, just create the MB database:
 ```plsql
-CREATE DATABASE musicbrainz ENCODING 'UTF8';
+CREATE DATABASE musicbrainz OWNER mbuser ENCODING 'UTF8';
 \q
 ```
 
@@ -60,7 +66,7 @@ CREATE EXTENSION cube;
 
 So now we can run the Schema creation script in order to receive the data:
 ```shell
-$ psql --username=postgres --password --host=localhost -d musicbrainz -f CreateTables.sql
+$ psql --username=mbuser --password --host=localhost -d musicbrainz -f CreateTables.sql
 ```
 
 At this point, we have created the MusicBrainz database and all its tables
