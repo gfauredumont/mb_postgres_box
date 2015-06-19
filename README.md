@@ -8,7 +8,7 @@
 - Load DB dump from 'full_export' file
 http://musicbrainz.org/doc/MusicBrainz_Database/Download
 =>  http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/
-(copy into project dir)
+(copy the full content of directory into `/vagrant/mb/` )
 
 
 
