@@ -65,6 +65,7 @@ CREATE EXTENSION cube;
 ~~~
 
 So now we can run the Schema creation script in order to receive the data:
+(note: password for 'mbuser' is 'musicbrainz' !)
 ~~~ sh
 $ psql --username=mbuser --password --host=localhost -d musicbrainz -f CreateTables.sql
 ~~~
@@ -73,13 +74,14 @@ At this point, we have created the MusicBrainz database and all its tables
 We don't need the triggers and stuff as we don't intend on using the database, just reading it !
 
 
-- Copy the MusicBrainz database dump into the /vagrant/mb directory
+- Copy the MusicBrainz database dump (for now, only `mbdump.tar.bz2` is handled) into the /vagrant/mb directory
 (should be faster to do this on the host side...)
 
 - Extract the tarball into files
 ~~~ sh
 $ tar -xvf mbdumb.tar.bz2
 ~~~
+This should have created some file in the `mb` directory and especially the `mbdump` directory which contains all the files that we need !!
 
 
 - Load the MusicBrainz dump from files into postgres
